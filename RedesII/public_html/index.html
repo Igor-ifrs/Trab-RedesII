@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+
+-->
+<html>
+    <head>
+        <link rel="icon" href="img/favicon.png" />
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <title>REDES II</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div class="menu">
+            <ul>
+                <li class="menu-li"><a href="#home">Home</a> </li>
+                <li class="menu-li"><a href="#fifo">FIFO</a></li>
+                <li class="menu-li"><a href="#prioridade">Prioridade</a></li>
+                <li class="menu-li"><a href="#roud"> Round Robin</a> </li>
+                <li class="menu-li"><a href="#wfq">WFQ</a> </li>
+            </ul>
+        </div>
+        <div id="container">
+            <div id="home" class="container">1</div>
+            <div id="fifo" class="container">
+                <div id="fifos" style="display: flex; flex-wrap: wrap;background: yellow;justify-content: center;overflow: scroll!important">
+
+                </div>
+            </div>
+            <div id="prioridade" class="container">3</div>
+            <div id="roud" class="container">4</div>
+            <div id="wfq" class="container">5</div>
+        </div>
+        <script>
+            (function () {
+                var cc;
+                var corBox = [' #00cc00', '#b042f4', '#af5d15', '#0000FF', '#155137', '#ff0026', '#FF00FF', '#C0C0C0', '#FF6347', '#fff', '#efec23'];
+                for (var a = 0; a < 200; a++) {
+                    cc = m;
+                    console.log(a);
+                    console.log(cc);
+
+                    var m = Math.floor(Math.random() * corBox.length);
+                    console.log(m);
+                    console.log('------');
+
+                    if (m === cc) {
+                        m = Math.floor(Math.random() * corBox.length);
+                        console.log('entrou');
+                    }
+                    var box = document.createElement("div");
+                    var t = document.createTextNode(corBox[m]);
+                    box.className = 'box';
+                    box.appendChild(t);
+                    document.getElementById("fifos").appendChild(box);
+                    document.getElementsByClassName('box')[a].style.background = corBox[m];
+                }
+            })();
+        </script>
+    </body>
+</html>
