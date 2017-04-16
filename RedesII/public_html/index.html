@@ -21,42 +21,77 @@
                 <li class="menu-li"><a href="#wfq">WFQ</a> </li>
             </ul>
         </div>
-        <div id="container">
-            <div id="home" class="container">1</div>
-            <div id="fifo" class="container">
-                <div id="fifos" style="display: flex; flex-wrap: wrap;background: yellow;justify-content: center;overflow: scroll!important">
 
-                </div>
+        <div id="home" class="containers">
+            <div class="entrada">
+                Entrada de dados 
             </div>
-            <div id="prioridade" class="container">3</div>
-            <div id="roud" class="container">4</div>
-            <div id="wfq" class="container">5</div>
+            <div class="saida">
+                Resultado
+            </div>
+        </div>
+
+        <div id="fifo" class="containers">
+            <div class="entrada">
+                Entrada de dados 
+                <div id="fifos" style="display: flex; flex-wrap: wrap;justify-content: center;"> </div>
+            </div>
+            <div class="saida">
+                Resultado
+            </div>           
+        </div>
+
+        <div id="prioridade" class="containers">
+            <div class="entrada">
+                Entrada de dados 
+            </div>
+            <div class="saida">
+                Resultado
+            </div>
+        </div>
+
+        <div id="roud" class="containers">
+            <div class="entrada">
+                Entrada de dados 
+            </div>
+            <div class="saida">
+                Resultado
+            </div>  
+        </div>
+
+        <div id="wfq" class="containers">
+            <div class="entrada">
+                Entrada de dados 
+            </div>
+            <div class="saida">
+                Resultado
+            </div>
         </div>
         <script>
+
             (function () {
                 var cc;
-                var corBox = [' #00cc00', '#b042f4', '#af5d15', '#0000FF', '#155137', '#ff0026', '#FF00FF', '#C0C0C0', '#FF6347', '#fff', '#efec23'];
-                for (var a = 0; a < 200; a++) {
+                var m = '';
+                const corBox = ['#00cc00', '#b042f4', '#af5d15', '#0000FF', '#155137', '#ff0026', '#FF00FF', '#C0C0C0', '#FF6347', '#fff', '#efec23'];
+                for (var a = 0; a < 100; a++) {
                     cc = m;
-                    console.log(a);
-                    console.log(cc);
-
-                    var m = Math.floor(Math.random() * corBox.length);
-                    console.log(m);
-                    console.log('------');
-
+                    m = Math.floor(Math.random() * corBox.length);
                     if (m === cc) {
                         m = Math.floor(Math.random() * corBox.length);
-                        console.log('entrou');
                     }
                     var box = document.createElement("div");
-                    var t = document.createTextNode(corBox[m]);
-                    box.className = 'box';
-                    box.appendChild(t);
+                    var txt = document.createTextNode(corBox[m]);
+                    box.className = 'box teste';
+                    box.appendChild(txt);
                     document.getElementById("fifos").appendChild(box);
                     document.getElementsByClassName('box')[a].style.background = corBox[m];
                 }
             })();
+            /*
+             window.addEventListener('load', function () {
+             alert('carregou');
+             });
+             */
         </script>
     </body>
 </html>
